@@ -1,0 +1,9 @@
+<%= link_to "Create New List", new_list_path %>
+<section>
+  <% @lists.each do |list| %>
+    <article>
+      <h2><%= link_to list.title, list_path(list) %></h2>
+      <time>Updated <%= list.updated_at %></time>
+    </article>
+  <% end %>
+</section>
