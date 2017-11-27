@@ -38,10 +38,12 @@ ActiveRecord::Schema.define(version: 20171120200030) do
   end
 
   create_table "stacks", force: :cascade do |t|
-    t.integer "num_lits", null: false
-    t.integer "num_items", null: false
     t.bigint "list_id", null: false
     t.bigint "item_id", null: false
+    t.integer "num_items", null: false
+    t.integer "num_lists", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_stacks_on_item_id"
     t.index ["list_id"], name: "index_stacks_on_list_id"
   end

@@ -1,3 +1,5 @@
+<%= link_to "Home", lists_path %>
+<div class="container">
 <section>
   <div class= "list">
   <h2><%= @list.title %></h2>
@@ -9,9 +11,9 @@
 </div>
 </section>
 <section>
-  <div class="items">
-    <h3>Items</h3>
-    <%= link_to "Add Item", new_list_item_path(@list) %>
+  <div class="item">
+    <h2>Items</h2>
+    <%= link_to "Add", new_list_item_path(@list) %>
     <% @list.items.each do |item| %>
       <time><p>Last updated by: <%= item.user.email %></p>
          <%= item.updated_at %></time>
@@ -27,3 +29,4 @@
     <% end %>
   </div>
 </section>
+</div>

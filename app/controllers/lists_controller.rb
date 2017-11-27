@@ -7,15 +7,6 @@ class  ListsController < ApplicationController
     @list = List.find(params[:id])
   end
 
-  def edit
-    @list = List.find(params[:id])
-    if @list.user != current_user
-       @list.edit(list_params)
-         flash[:alert]= "Only the author of the post can edit it!"
-         redirect_to list_path(@list)
-    end
-  end
-
   def new
      @list = List.new
   end
@@ -23,6 +14,15 @@ class  ListsController < ApplicationController
   def create
     @list = List.create!(list_params.merge(user: current_user))
       redirect_to list_path(@list)
+  end
+
+  def edit
+    @list = List.find(params[:id])
+    if @list.user != current_user
+       @list.edit(list_params)
+         flash[:alert]= "Only the author of the post can edit it!"
+         redirect_to list_path(@list)
+    end
   end
 
   def update
@@ -43,7 +43,7 @@ class  ListsController < ApplicationController
     else
        flash[:alert] = "Only the author of the post can delete it!"
   end
-       redirect_to lists_path
+       redirect_to lists_path(@list)
   end
 
     private

@@ -1,15 +1,82 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+.logo svg {
+	display: block;
+	margin: auto;
+	padding: 15px 0px;
+	width: 300px;
+	height: 300px;
+}
+.logo header {
+	font-size: 60px;
+	display: block;
+	margin: auto;
+	width: 500px;
+	font-family: monospace, cursive;
+}
+
+.list {
+	border: 1px solid #00000;
+	padding: 10px;
+	width: 400px;
+	height: auto;
+}
+.item {
+	border: 1px solid #00000;
+	padding: 10px;
+	width: 400px;
+	height: auto;
+}
+.container {
+	width: 400px;
+	height: 800px;
+	margin: auto;
+	border-radius: 20px;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: row;
+}
+body {
+	background-color: #f9f2ea;
+	box-sizing: border-box;
+	font-family: monospace, cursive;
+}
+h2 {
+	color: #6360af;
+	font-family: monospace, cursive;
+	display: block;
+	align-items: center;
+}
+p {
+	color: #6360af;
+	font-size: 15px;
+	font-family: monospace, cursive;
+	display: block;
+	justify-content: center;
+}
+time {
+	font-size: 2px;
+}
+label,
+input,
+textarea {
+	width: 400px;
+	margin: 1px;
+	border: 1px solid #ad6299;
+	box-sizing: border-box;
+	font: inherit;
+	display: block;
+	justify-content: center;
+}
+
+section {
+	border-bottom: 2px solid black;
+	padding: 3em 0;
+	display: block;
+	justify-content: center;
+}
+nav a {
+	/*background-color: #ad6299;*/
+	font-size: 28px;
+	padding: 1px;
+	/*margin: 1px;*/
+	display: inline-table;
+}

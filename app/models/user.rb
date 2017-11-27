@@ -5,5 +5,4 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :lists, dependent: :destroy
   has_many :items, dependent: :destroy
-  has_many :stacks, dependent: :destroy
 end
