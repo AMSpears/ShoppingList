@@ -7,9 +7,9 @@ Rails.application.routes.draw do
     end
 
     resources :items, only: [:index, :show] do
-   member do
-     post 'add_stack'
-     delete 'remove_stack'
-   end
- end
+      member do
+       post 'add_stack'
+       delete 'remove_stack'
+       end
+    end
 end

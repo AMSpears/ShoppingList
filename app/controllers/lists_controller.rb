@@ -8,10 +8,12 @@ class  ListsController < ApplicationController
   end
 
   def new
-     @list = List.new
+    @user = User.find(params[:user_id])
+    @list = List.new
   end
 
   def create
+    @user = User.find(params[:user_id])
     @list = List.create!(list_params.merge(user: current_user))
       redirect_to list_path(@list)
   end

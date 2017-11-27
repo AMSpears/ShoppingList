@@ -21,11 +21,9 @@ ActiveRecord::Schema.define(version: 20171120200030) do
     t.string "category"
     t.integer "quantity", null: false
     t.text "note"
-    t.bigint "list_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.index ["list_id"], name: "index_items_on_list_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
@@ -40,8 +38,6 @@ ActiveRecord::Schema.define(version: 20171120200030) do
   create_table "stacks", force: :cascade do |t|
     t.bigint "list_id", null: false
     t.bigint "item_id", null: false
-    t.integer "num_items", null: false
-    t.integer "num_lists", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_stacks_on_item_id"
@@ -65,7 +61,6 @@ ActiveRecord::Schema.define(version: 20171120200030) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "items", "lists"
   add_foreign_key "items", "users"
   add_foreign_key "lists", "users"
   add_foreign_key "stacks", "items"
