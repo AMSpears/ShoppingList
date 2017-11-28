@@ -6,19 +6,19 @@
   <h3>Items <%= link_to "(+)", new_list_item_path(@list) %> </h3>
 
       <% @list.items.all.each do |item| %>
-        <p> <%= item.name %> </p>
-        <p> <%= item.category %> </p>
-        <p> <%= item.quantity %> </p>
-        <p> <%= item.photo_url %> </p>
-        <p> <%= item.note %> </p>
-        <p><%= link_to "Edit Item", edit_list_item_path(@list, item) %> |
-        <%= link_to "Remove Item", list_item_path(@list, item), method: :delete %></p>
+        <p><%= link_to "&#9997;".html_safe, edit_list_item_path(@list, item) %> |
+        <%= link_to "&#10060;".html_safe, list_item_path(@list, item), method: :delete %>
+        <%= item.name %>| <%= item.category %> | <%= item.quantity %> | <%= item.note %> </p>
+        <!-- <p> <%= item.photo_url %> </p> -->
+        <!-- <p> <%= item.note %> </p> -->
+        <!-- <p><%= link_to "Edit Item", edit_list_item_path(@list, item) %> |
+        <%= link_to "Remove Item", list_item_path(@list, item), method: :delete %></p> -->
     <% end %>
-  
+
     <time>Last updated by: <%= @list.user.email %> <br> <%= @list.updated_at %> </time>
       <% if @list.user == current_user %>
-    <p> <%= link_to "Update List name", edit_list_path(@list) %> |
-      <%= link_to "Delete List", list_path(@list), method: :delete %> </p>
+    <p> <%= link_to "&#9997;".html_safe, edit_list_path(@list) %> |
+      <%= link_to "&#10060;".html_safe, list_path(@list), method: :delete %> </p>
       <%end %>
 </div>
 </section>

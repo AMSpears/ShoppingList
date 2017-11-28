@@ -33,7 +33,7 @@ class  ListsController < ApplicationController
        @list.update(list_params)
     else
       flash[:alert] = "Only the author of the post can edit it!"
-  end
+    end
       redirect_to list_path(@list)
   end
 
