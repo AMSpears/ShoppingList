@@ -45,6 +45,13 @@ h2 {
 	display: block;
 	align-items: center;
 }
+h3 {
+	color: #5ce8cc;
+	font-family: monospace, cursive;
+	display: block;
+	align-items: center;
+}
+
 p {
 	color: #6360af;
 	font-size: 15px;
@@ -60,7 +67,7 @@ input,
 textarea {
 	width: 400px;
 	margin: 1px;
-	border: 1px solid #ad6299;
+	border: 2px solid #5ce8cc;
 	box-sizing: border-box;
 	font: inherit;
 	display: block;
@@ -74,8 +81,8 @@ section {
 	justify-content: center;
 }
 nav a {
-	/*background-color: #ad6299;*/
-	font-size: 28px;
+	background-color: #ad6299;
+	font-size: 20px;
 	padding: 1px;
 	/*margin: 1px;*/
 	display: inline-table;

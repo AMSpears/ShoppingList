@@ -1,0 +1,11 @@
+<div class="container">
+<h2>Item <%= link_to "(+)", new_list_item_path %></h2>
+
+<ul>
+  <% @items.each do |item| %>
+    <li>
+      <%= link_to item.name, item %>
+    </li>
+  <% end %>
+</ul>
+</div>
