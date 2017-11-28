@@ -3,30 +3,25 @@
 <section>
   <div class= "list">
   <h2><%= @list.title %></h2>
-  <time><p>Last updated by: <%= @list.user.email %> </p> <p> <%= @list.updated_at %> <p></time>
-  <% if @list.user == current_user %>
-  <p> <%= link_to "Edit List", edit_list_path(@list) %>
-  <%= link_to "Delete List", list_path(@list), method: :delete %> </p>
-  <%end %>
-</div>
-</section>
-<section>
-  <div class="item">
-    <h2>Items</h2>
-    <%= link_to "Add", new_list_item_path(@list) %>
-    <% @list.items.each do |item| %>
-      <time><p>Last updated by: <%= item.user.email %></p>
-         <%= item.updated_at %></time>
+  <h3>Items <%= link_to "(+)", new_list_item_path(@list) %> </h3>
+      <% @list.items.each do |item| %>
         <p> <%= item.name %> </p>
         <p> <%= item.category %> </p>
         <p> <%= item.quantity %> </p>
         <p> <%= item.photo_url %> </p>
         <p> <%= item.note %> </p>
-        <%  if item.user == current_user || @list.user == current_user%>
-        <%= link_to "Edit", edit_list_item_path(@list, item) %> |
-        <%= link_to "Delete", list_item_path(@list, item), method: :delete %>
+        <!-- <time><p>Last updated by: <%= item.user.email %></p>
+           <%= item.updated_at %></time> -->
+        <% if item.user == current_user || @list.user == current_user%>
+        <p><%= link_to "Edit Item", edit_list_item_path(@list, item) %> |
+        <%= link_to "Remove Item", list_item_path(@list, item), method: :delete %></p>
         <% end %>
     <% end %>
-  </div>
+    <time>Last updated by: <%= @list.user.email %> <br> <%= @list.updated_at %> </time>
+      <% if @list.user == current_user %>
+    <p> <%= link_to "Update List name", edit_list_path(@list) %> |
+      <%= link_to "Delete List", list_path(@list), method: :delete %> </p>
+      <%end %>
+</div>
 </section>
 </div>

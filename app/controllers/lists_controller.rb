@@ -1,4 +1,5 @@
 class  ListsController < ApplicationController
+
   def index
     @lists = List.all
   end
@@ -8,12 +9,10 @@ class  ListsController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
     @list = List.new
   end
 
   def create
-    @user = User.find(params[:user_id])
     @list = List.create!(list_params.merge(user: current_user))
       redirect_to list_path(@list)
   end
