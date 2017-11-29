@@ -1,25 +1,26 @@
 <%= link_to "Home", lists_path %>
-<div class="container">
-<section>
-  <div class= "list">
-  <h2><%= @list.title %></h2>
-  <h3>Items <%= link_to "(+)", new_list_item_path(@list) %> </h3>
 
-      <% @list.items.all.each do |item| %>
-        <p><%= link_to "&#9997;".html_safe, edit_list_item_path(@list, item) %> |
-        <%= link_to "&#10060;".html_safe, list_item_path(@list, item), method: :delete %>
-        <%= item.name %>| <%= item.category %> | <%= item.quantity %> | <%= item.note %> </p>
-        <!-- <p> <%= item.photo_url %> </p> -->
-        <!-- <p> <%= item.note %> </p> -->
-        <!-- <p><%= link_to "Edit Item", edit_list_item_path(@list, item) %> |
-        <%= link_to "Remove Item", list_item_path(@list, item), method: :delete %></p> -->
+  <div class="container">
+
+  <section>
+  <div class= "list">
+    <h2><%= @list.title %> </h2>
+  <h3> <%= link_to " Items +", new_list_item_path(@list) %> </h3>
+    <% @list.items.all.each do |item| %>
+    <div class="edit_buttons">
+       <%= item.name %>     |
+          <%= item.category %>  |
+          <%= item.quantity %>  |
+          <%= item.note %>
+    <%= link_to "&#9997;".html_safe,edit_list_item_path(@list, item) %>
+    <%= link_to "&#10060;".html_safe,list_item_path(@list, item), method: :delete %>
     <% end %>
+  </div>
 
     <time>Last updated by: <%= @list.user.email %> <br> <%= @list.updated_at %> </time>
-      <% if @list.user == current_user %>
-    <p> <%= link_to "&#9997;".html_safe, edit_list_path(@list) %> |
-      <%= link_to "&#10060;".html_safe, list_path(@list), method: :delete %> </p>
+        <% if @list.user == current_user %>
+       <%= link_to "&#9997;".html_safe, edit_list_path(@list) %>
+       <%= link_to "&#10060;".html_safe, list_path(@list), method: :delete %>
       <%end %>
-</div>
 </section>
 </div>
