@@ -1,12 +1,12 @@
 <div class="container">
 
-<%= form_for(@user, as: @user, url: new_user_registration_path(@user)) do |f| %>
+<%= form_for(@user, as: @user, url: new_user_registration_path(@user, current_user)) do |f| %>
   <%= devise_error_messages! %>
 
-  <h2>Sign up</h2>
-  <div class="field">
-    <%= f.label :username %>
-    <%= f.text_field :name, autofocus: true %></div>
+  <h2>Register</h2>
+  <!-- <div class="field"> -->
+    <!-- <%= f.label :username %>
+    <%= f.text_field :name, autofocus: true %></div> -->
 
   <!-- <div><%= f.check_box :is_female, {}, true %> <%= f.label :is_female, "Female" %> </div>
    <div><%= f.check_box :is_female, {}, false %> <%= f.label :is_female, "Male" %> </div>
@@ -37,4 +37,4 @@
   </div>
 <% end %>
 </div>
-<!-- <%= render "users/shared/links" %> -->
+<%= render "users/shared/links" %>

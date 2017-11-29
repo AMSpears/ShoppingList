@@ -1,7 +1,8 @@
 <div class="container">
 <%= form_for @list do |f| %>
-  <%= f.label :list_name %>
-  <%= f.text_field :title %>
+ <h2>Name Your List</h2>
+  <%= f.label :name %>
+  <%= f.text_field :title, placeholder: "e.g. Groceries" %>
   <%= f.submit %>
 <% end %>
 </div>

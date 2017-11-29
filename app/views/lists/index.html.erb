@@ -1,9 +1,13 @@
-<div class="create_button">
-<%= link_to "New List +", new_list_path %>
-</div>
+   <% if current_user %>
+<div class= "container">
 <section>
-  <% current_user.lists.each do |list| %>
+  <div class="create_button">
+  <%= link_to "New List +", new_list_path %>
+  </div>
+  <% @lists.each do |list| %>
       <h2><%= link_to list.title, list_path(list) %></h2>
       <time>Updated <%= list.updated_at %></time>
   <% end %>
+  <% end %>
 </section>
+</div>

@@ -2,11 +2,11 @@
 	display: block;
 	margin: auto;
 	padding: 15px 0px;
-	width: 300px;
+	width: 400px;
 	height: 300px;
 }
 
-.list {
+.list header {
 	border: 1px solid #00000;
 	padding: 20px 30px;
 	width: 500px;
@@ -46,7 +46,7 @@ a {
 	border-radius: 10px;
 	color: #ffffff;
 	background-color: #610940;
-	display: inline-block;
+	justify-content: center;
 	text-decoration: none;
 }
 
@@ -58,7 +58,7 @@ a {
 nav,
 a {
 	padding: 2px, 5px;
-	margin: 1px, 2px;
+	margin: 2px, 2px;
 }
 
 a:hover {
@@ -76,12 +76,14 @@ h2 {
 	align-items: center;
 	font-size: 48px;
 	display: flex;
+	flex-direction: row;
 	justify-content: center;
 }
 h3 {
 	color: #00729c;
 	font-family: 'Roboto', sans-serif;
 	display: flex;
+	flex-direction: row;
 	justify-content: center;
 }
 
@@ -111,6 +113,10 @@ textarea {
 	font-family: 'Roboto', sans-serif;
 }
 
+label {
+	margin: 8px 0px;
+	padding: 10px 3px;
+}
 section {
 	padding: 2em 0;
 	display: block;
