@@ -13,8 +13,7 @@ class ItemsController < ApplicationController
   def create
     @list = List.find(params[:list_id])
     @item = @list.items.create(item_params)
-
-    redirect_to list_path(@list)
+    redirect_to new_list_item_path(@list)
   end
 
   def show

@@ -1,18 +1,13 @@
-<h2>Edit <%= @user.to_s.humanize %></h2>
+<%= link_to "Home", lists_path %>
 
-<%=form_for(@user, as: @user, url: user_session_path(@user), html: { method: :put }) do |f| %>
-<%= devise_error_messages! %>
-
-<div><%= f.label :name %><br />
+<div class="container">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= devise_error_messages! %>
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
+   <div><%= f.label :name %><br />
      <%= f.text_field :name, autofocus: true %></div>
 
- <div><%= f.check_box :is_female, {}, true %> <%= f.label :is_female, "Female" %> </div>
- <div><%= f.check_box :is_female, {}, false %> <%= f.label :is_female, "Male" %> </div>
-
- <div><%= f.label :date_of_birth %><br />
-      <%= f.date_select :date_of_birth %></div>
-
- <div class="field">
+ <div>
      <%= f.label :email %><br />
      <%= f.email_field :email, autofocus: true %>
   </div>
@@ -21,7 +16,7 @@
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
 
-  <div class="field">
+  <div>
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>
     <% if @minimum_password_length %>
@@ -30,23 +25,24 @@
     <% end %>
   </div>
 
-  <div class="field">
+  <div>
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
-  <div class="field">
+  <div>
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
-  <div class="actions">
+  <div class="action">
     <%= f.submit "Update" %>
   </div>
+
+  <div class="action">
+    <%= button_to "Cancel Account", registration_path(resource_name),
+    data: { confirm: "Are you sure?" }, method: :delete %>
+  </div>
 <% end %>
-
-<h3>Cancel my account</h3>
-
-<p><%= button_to "Cancel my account", cancel_registration_path(@user), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
+</div>
 <%= link_to "Back", :back %>

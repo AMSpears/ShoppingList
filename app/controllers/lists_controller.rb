@@ -13,9 +13,15 @@ class  ListsController < ApplicationController
   end
 
   def create
-    @list = List.create!(list_params.merge(user: current_user))
-      redirect_to list_path(@list)
+    @list = List.new(list_params)
+    @list = List.create(list_params.merge(user: current_user))
+      if @list.save
+        flash[:notice] = "New List created."
+        redirect_to root_path(@list)
+    else
+     render :new
   end
+end
 
   def edit
     @list = List.find(params[:id])

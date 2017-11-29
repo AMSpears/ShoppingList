@@ -1,22 +1,22 @@
-.logo svg {
+.logo img {
 	display: block;
 	margin: auto;
 	padding: 15px 0px;
-	width: 400px;
+	width: 300px;
 	height: 300px;
 }
 
-.list header {
+/*.list {
 	border: 1px solid #00000;
 	padding: 20px 30px;
 	width: 500px;
 	height: 300px;
-}
+}*/
 
 .container {
 	background-color: #ffffff;
 	width: 600px;
-	height: 800px;
+	height: 1000px;
 	margin: auto;
 	border: 1px solid #ffffff;
 	border-radius: 10px;
@@ -51,7 +51,10 @@ a {
 }
 
 .actions {
-	background-color: #00729c;
+	text-decoration: none;
+	padding: 2px, 5px;
+	margin: 2px, 2px;
+	justify-content: center;
 	text-decoration: none;
 }
 .edit_buttons,
@@ -68,6 +71,8 @@ a:hover {
 body {
 	background-color: #f4e2d3;
 	font-family: 'Roboto', sans-serif;
+	/*background-image: url('https://image.ibb.co/nq6rhw/shopping_list_background.png');
+	background-repeat: no-repeat;*/
 }
 h2 {
 	color: #610940;
@@ -101,6 +106,11 @@ time {
 	justify-content: center;
 }
 
+label {
+	margin: 8px 0px;
+	padding: 10px 3px;
+}
+
 input,
 textarea {
 	width: 400px;
@@ -113,10 +123,6 @@ textarea {
 	font-family: 'Roboto', sans-serif;
 }
 
-label {
-	margin: 8px 0px;
-	padding: 10px 3px;
-}
 section {
 	padding: 2em 0;
 	display: block;
