@@ -3,7 +3,8 @@
 <div class="container">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= devise_error_messages! %>
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+    <h2>Edit <%= resource_name.to_s.humanize %></h2>
+
    <div><%= f.label :name %><br />
      <%= f.text_field :name, autofocus: true %></div>
 
@@ -17,22 +18,21 @@
     <% end %>
 
   <div>
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.label :password %> <br />
+    <%= f.password_field :password, autocomplete: "off", placeholder: "New Password" %>
     <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> 8 characters minimum</em>
+      <%= @minimum_password_length %>
     <% end %>
   </div>
 
   <div>
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Repeat New Password" %>
   </div>
 
   <div>
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
+    <%= f.label :current_password %>
+    <%= f.password_field :current_password, autocomplete: "off", placeholder: "Current Password" %>
   </div>
 
   <div class="action">

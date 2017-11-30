@@ -5,27 +5,20 @@
     <h2>Sign up</h2>
 
     <div ><%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true %></div>
-
-    <div><%= f.check_box :is_female, {}, true %> <%= f.label :is_female, "Female" %> </div>
-    <div><%= f.check_box :is_female, {}, false %> <%= f.label :is_female, "Male" %> </div>
-
-    <!-- <div>
-       <%= f.label :birth_date %><br />
-     <%= f.date_select :date_of_birth %></div> -->
+    <%= f.text_field :name, autofocus: true, placeholder: "e.g. John Doe"%></div>
 
     <div><%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true %></div>
+        <%= f.email_field :email, autofocus: true, placeholder: "e.g. user@email.com" %></div>
 
     <div><%= f.label :password %>
 
-        <%= f.password_field :password, autocomplete: "off" %></div>
+        <%= f.password_field :password, autocomplete: "off", placeholder: "8 minimun characters" %></div>
 
-    <div><%= f.label :password_confirmation %>
+    <div><%= f.label :confirm_password %>
 
-        <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+        <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "8 minimun characters" %></div>
 
-    <div><%= f.submit "Sign up" %></div>
+    <div class= "action"><%= f.submit "Sign up" %></div>
   <% end %>
 
 </div>

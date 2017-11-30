@@ -1,9 +1,5 @@
 class ItemsController < ApplicationController
 
-  def index
-    @items = Item.all
-  end
-
   def new
     @list = List.find(params[:list_id])
     @item = @list.items.new
@@ -13,7 +9,7 @@ class ItemsController < ApplicationController
   def create
     @list = List.find(params[:list_id])
     @item = @list.items.create(item_params)
-    redirect_to new_list_item_path(@list)
+    redirect_to list_path(@list)
   end
 
   def show

@@ -2,11 +2,14 @@
 <div class= "container">
 <section>
   <div class="create_button">
-  <%= link_to "New List +", new_list_path %>
+  <%= link_to "Create a New List ", new_list_path , :class => "new_list"%>
   </div>
   <% current_user.lists.each do |list| %>
-      <h2><%= link_to list.title, list_path(list) %></h2>
-      <time>Updated <%= list.updated_at %></time>
+  <ul>
+    <li>
+    <%= link_to list.title, list_path(list) %> <time>Updated <%= list.updated_at %></time>
+  </li>
+</ul>
   <% end %>
   <% end %>
 </section>
