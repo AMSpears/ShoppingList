@@ -1,4 +1,6 @@
 <div class= "container">
-    <%= link_to "Home", lists_path, :class => "home_path"%>
+    <%= link_to lists_path do %>
+    <i class="fa fa-home" aria-hidden="true"></i>
+    <% end %>
 </div>
 <%= render "form" %>
