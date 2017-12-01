@@ -16,8 +16,10 @@
          <% @list.items.all.each do |item| %>
             <div class="edit_buttons">
               <ul>
-                <li>
-                    <%= item.name %> | <%= item.category %> | <%= item.quantity %> | <%= item.note %>
+               <li>
+                  <div class="item_style">
+                    <%= item.name %> : </div>
+                    <%= item.category %> | <%= item.quantity %> | <%= item.note %>
                    <%= link_to "&#9997;".html_safe, edit_list_item_path(@list, item), :class => "item_edit"  %>
                    <%= link_to "&#10060;".html_safe,list_item_path(@list, item), method: :delete, :class => "item_delete" %>
                 </li>

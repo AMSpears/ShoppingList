@@ -62,6 +62,11 @@ a {
 	padding: inherit;
 	margin: 10px 5px;
 }
+.item_style {
+	color: red;
+	font-weight: bold;
+	text-decoration: underline;
+}
 a:hover {
 	background-color: #dccabc;
 }

@@ -16,14 +16,7 @@
 
   <div class="signing_buttons">
     <nav>
-        <%if !current_user%>
-            <%= link_to new_user_registration_path do %>
-              <i class="fa fa-user-plus" aria-hidden="true"></i>
-            <% end %> |
-            <%= link_to new_user_session_path do %>
-             <i class="fa fa-sign-in" aria-hidden="true"></i>
-            <% end %>
-        <% else %>
+        <%if current_user%>      
              <%= link_to "&#9881;".html_safe, edit_user_registration_path, :class => "edit" %>  |
              <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
                <h3><%= current_user.name %></h3>
