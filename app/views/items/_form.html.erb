@@ -1,20 +1,20 @@
 <div class="container">
 
-<%= form_for [@list, @item] do |f| %>
-  <h2>Item</h2>
+  <%= form_for [@list, @item] do |f| %>
+    <h2>Item</h2>
 
-  <%= f.label :name%>
-  <%= f.text_field :name, placeholder: "e.g. Apples" %>
+    <%= f.label :name%>
+    <%= f.text_field :name, placeholder: "e.g. Apples" %>
 
-  <%= f.label :category %>
-  <%= f.text_field :category, placeholder: "e.g. Fruit" %>
+    <%= f.label :category %>
+    <%= f.text_field :category, placeholder: "e.g. Fruit" %>
 
-  <%= f.label :quantity%>
-  <%= f.text_field :quantity, placeholder: "e.g. 4" %>
+    <%= f.label :quantity%>
+    <%= f.text_field :quantity, placeholder: "e.g. 4" %>
 
-  <%= f.label :note %>
-  <%= f.text_area :note,placeholder: "e.g. Get at Trader Joe's"  %>
+    <%= f.label :note %>
+    <%= f.text_area :note,placeholder: "e.g. Get at Trader Joe's"  %>
 
-  <%= f.submit %>
-<% end %>
+    <%= f.submit %>
+  <% end %>
 </div>

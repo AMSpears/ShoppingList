@@ -1,37 +1,42 @@
 
   <div class="container">
-   <section>
-     <div class= "container">
-         <%= link_to lists_path do %>
-         <i class="fa fa-home" aria-hidden="true"></i>
-         <% end %>
-     </div>
-     <h2><%= @list.title %> </h2>
-       <div class="container">
-           <%= link_to new_list_item_path(@list) do %>
-           <i class="fa fa-cart-plus" aria-hidden="true"></i>
-           <%end%>
-         </div>
+    <section>
 
-         <% @list.items.all.each do |item| %>
-            <div class="edit_buttons">
+      <div class= "container">
+        <%= link_to lists_path do %>
+        <i class="fa fa-home" aria-hidden="true"></i>
+        <% end %>
+      </div>
+
+    <h2><%= @list.title %> </h2>
+
+      <div class="container">
+         <%= link_to new_list_item_path(@list) do %>
+         <i class="fa fa-cart-plus" aria-hidden="true"></i>
+         <%end%>
+      </div>
+
+        <% @list.items.all.each do |item| %>
+      <div class="edit_buttons">
               <ul>
-               <li>
+                <li>
                   <div class="item_style">
-                    <%= item.name %> : </div>
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                    <%= item.name %> :
+                  </div>
                     <%= item.category %> | <%= item.quantity %> | <%= item.note %>
-                   <%= link_to "&#9997;".html_safe, edit_list_item_path(@list, item), :class => "item_edit"  %>
-                   <%= link_to "&#10060;".html_safe,list_item_path(@list, item), method: :delete, :class => "item_delete" %>
+                    <%= link_to "&#9997;".html_safe, edit_list_item_path(@list, item), :class => "item_edit"  %>
+                    <%= link_to "&#10060;".html_safe,list_item_path(@list, item), method: :delete, :class => "item_delete" %>
                 </li>
               </ul>
-          <% end %>
+                    <% end %>
                  <time>Last updated by: <%= @list.user.email %> <br> <%= @list.updated_at %></time>
                  <div class="container">
-            <% if @list.user == current_user %>
-                  <%= link_to "&#9997;".html_safe, edit_list_path(@list), :class => "list_edit" %>
-                  <%= link_to "&#10060;".html_safe, list_path(@list), method: :delete, :class => "list_delete" %>
-            <%end %>
-             </div>
+                   <% if @list.user == current_user %>
+                   <%= link_to "&#9997;".html_safe, edit_list_path(@list), :class => "list_edit" %>
+                   <%= link_to "&#10060;".html_safe, list_path(@list), method: :delete, :class => "list_delete" %>
+                   <%end %>
+                 </div>
       </div>
     </section>
    </div>

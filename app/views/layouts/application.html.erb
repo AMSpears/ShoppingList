@@ -16,8 +16,10 @@
 
   <div class="signing_buttons">
     <nav>
-        <%if current_user%>      
-             <%= link_to "&#9881;".html_safe, edit_user_registration_path, :class => "edit" %>  |
+        <%if current_user%>
+             <%= link_to edit_user_registration_path do %>
+             <i class="fa fa-cog" aria-hidden="true"></i>
+            <%end%>
              <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
                <h3><%= current_user.name %></h3>
         <% end %>
@@ -43,6 +45,8 @@
        <% end %>
 
     <%= yield %>
+
+</div>
 
   </body>
 </html>

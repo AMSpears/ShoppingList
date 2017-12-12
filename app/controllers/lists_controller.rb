@@ -18,39 +18,39 @@ class  ListsController < ApplicationController
       if @list.save
         flash[:notice] = "New List created."
         redirect_to root_path(@list)
-    else
-     render :new
+      else
+        render :new
+      end
   end
-end
 
   def edit
     @list = List.find(params[:id])
-    if @list.user != current_user
+      if @list.user != current_user
        @list.edit(list_params)
          flash[:alert]= "Only the author of the post can edit it!"
          redirect_to list_path(@list)
-    end
+      end
   end
 
   def update
     @list = List.find(params[:id])
     @list.update(list_params.merge(user: current_user))
-    if @list.user == current_user
+      if @list.user == current_user
        @list.update(list_params)
-    else
-      flash[:alert] = "Only the author of the post can edit it!"
-    end
-      redirect_to list_path(@list)
+      else
+        flash[:alert] = "Only the author of the post can edit it!"
+      end
+        redirect_to list_path(@list)
   end
 
   def destroy
     @list = List.find(params[:id])
-    if @list.user == current_user
+      if @list.user == current_user
        @list.destroy
-    else
+      else
        flash[:alert] = "Only the author of the post can delete it!"
-  end
-       redirect_to lists_path(@list)
+      end
+        redirect_to lists_path(@list)
   end
 
     private
