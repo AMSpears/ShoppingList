@@ -102,7 +102,7 @@ p {
 }
 time {
 	font-family: 'Roboto', sans-serif;
-	font-size: 2px;
+	font-size: 2px; /*Why so small? */
 	display: flex;
 	justify-content: center;
 }
@@ -129,3 +129,6 @@ section {
 	display: block;
 	justify-content: center;
 }
+
+/*With CSS, try to have your selectors go from least specific to most specific (elements then classes then ids)*/
+/*Think about adding some media queries to account for smaller size screens*/

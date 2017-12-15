@@ -1,8 +1,9 @@
 <div class="container">
   <%= form_for @list do |f| %>
-  <h2>Name Your List</h2>
-  <%= f.label :name %>
-  <%= f.text_field :title, placeholder: "e.g. Groceries" %>
-  <%= f.submit %>
+    <h2>Name Your List</h2>
+    <%= f.label :name %>
+    <%= f.text_field :title, placeholder: "e.g. Groceries" %>
+    <%= f.submit %>
   <% end %>
 </div>
+<!-- Nice job using _form to reduce duplicate code -->

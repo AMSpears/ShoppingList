@@ -12,14 +12,14 @@ class  ListsController < ApplicationController
     @list = List.new
   end
 
-  def create
+  def create # Here you should just use List.create, you dont need List.new
     @list = List.new(list_params)
     @list = List.create(list_params.merge(user: current_user))
       if @list.save
         flash[:notice] = "New List created."
         redirect_to root_path(@list)
       else
-        render :new
+        render :new # Good place for an error message
       end
   end
 
@@ -40,22 +40,24 @@ class  ListsController < ApplicationController
       else
         flash[:alert] = "Only the author of the post can edit it!"
       end
-        redirect_to list_path(@list)
+    redirect_to list_path(@list)
   end
 
   def destroy
     @list = List.find(params[:id])
       if @list.user == current_user
-       @list.destroy
+        @list.destroy
       else
        flash[:alert] = "Only the author of the post can delete it!"
       end
-        redirect_to lists_path(@list)
+    redirect_to lists_path(@list)
   end
 
     private
 
-  def list_params
-      params.require(:list).permit(:title)
-  end
+    def list_params
+        params.require(:list).permit(:title)
+    end
  end
+
+# Good job using devise here!

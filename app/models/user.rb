@@ -12,3 +12,4 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
 end
+# The friendships feature you tried to implement is really tough.  Since this ends up not being used in your currently deployed app, it'd be a good idea to take that out and put it in a feature branch.  The master branch should reflect the deployed App.  However, I'd encourage you to come back to this idea!

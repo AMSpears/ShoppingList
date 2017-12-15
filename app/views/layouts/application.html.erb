@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
-
   <head>
-
     <title>Shoppinglist</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -19,12 +17,12 @@
         <%if current_user%>
              <%= link_to edit_user_registration_path do %>
              <i class="fa fa-cog" aria-hidden="true"></i>
-            <%end%>
+        <%end%>
              <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-               <h3><%= current_user.name %></h3>
+             <h3><%= current_user.name %></h3>
         <% end %>
-               <p class="notice"><%= notice %></p>
-               <p class="alert"><%= alert %></p>
+             <p class="notice"><%= notice %></p>
+             <p class="alert"><%= alert %></p>
      </nav>
   </div>
 
@@ -45,8 +43,6 @@
        <% end %>
 
     <%= yield %>
-
-</div>
 
   </body>
 </html>

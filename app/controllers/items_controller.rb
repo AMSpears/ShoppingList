@@ -9,10 +9,10 @@ class ItemsController < ApplicationController
   def create
     @list = List.find(params[:list_id])
     @item = @list.items.create(item_params)
-      redirect_to list_path(@list)
+      redirect_to list_path(@list) # include an if/else if validations pass or not
   end
 
-  def show
+  def show # You can remove this route since there is no corresponding view page
     @item = Item.find(params[:id])
   end
 
@@ -30,7 +30,7 @@ class ItemsController < ApplicationController
     @list = List.find(params[:list_id])
     @item = Item.find(params[:id])
       if @list.user == current_user
-        @item.update(item_params)
+        @item.update(item_params) # Add nested if/else to see if item passes validations
       else
         flash[:alert] = "Only the author can edit it!"
       end

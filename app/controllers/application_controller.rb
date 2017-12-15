@@ -12,3 +12,5 @@ class ApplicationController < ActionController::Base
         end
 
 end
+
+# Nice job making use of the ApplicationController for making users sign in!
