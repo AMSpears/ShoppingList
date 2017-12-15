@@ -8,10 +8,11 @@
         <% current_user.lists.each do |list| %>
           <ul>
             <li>
-              <%= link_to list.title, list_path(list) %> <time>Updated <%= list.updated_at %></time>
+              <%= link_to list.title, list_path(list) %>
+              <time>Updated <%= list.updated_at %></time>
             </li>
           </ul>
-          <% end %>
-<% end %>
+        <% end %>
     </section>
   </div>
+<% end %>

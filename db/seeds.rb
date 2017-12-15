@@ -60,3 +60,5 @@ cleaning_item_1 = cleaning.items.create(
            note: "Get from Giant"
          }
        )
+
+# Good job on using variables to create nested models inside one another.  Maybe add a couple more items just to round out your data.
