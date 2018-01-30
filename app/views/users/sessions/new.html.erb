@@ -1,7 +1,7 @@
 <div class="container">
 <%= form_for(@user, as: @user, url: user_session_path(@user)) do |f| %>
 
-  <h2>Log in</h2>
+  <h2>Sign in</h2>
 
   <div>
     <%= f.label :email %>
@@ -21,7 +21,7 @@
   <% end -%>
 
   <div class="action">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Sign in", :class => "button-submit" %>
   </div>
 <% end %>
 </div>

@@ -5,29 +5,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width= device-width, initial-scale= 1.0">
     <title>Shoppinglist</title>
-    <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <%= csrf_meta_tags %>
+      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto:400,700" rel="stylesheet">
     <script src="https://use.fontawesome.com/ffb5855a62.js"></script>
   </head>
 
   <body>
-
-  <div class="signing_buttons">
-    <nav>
-      <%if current_user%>
-        <%= link_to edit_user_registration_path do %>
-          <i class="fa fa-cog" aria-hidden="true"></i>
-        <%end%>
-          <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-            <h3><%= current_user.name %></h3>
-       <% end %>
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-     </nav>
-  </div>
+    <%if current_user%>
+      <%= link_to edit_user_registration_path do %>
+        <i class="fa fa-cog" aria-hidden="true"></i>
+      <%end%>
+    <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => "sign-out-btn" %>
+  <% end %>
 
   <header>
     <div class="logo">
@@ -35,16 +27,15 @@
     </div>
   </header>
 
-    <% if !current_user %>
-      <h2> Welcome to Shopping List!</h2>
-        <h3>Shopping List is the smarter way to keep your shopping organized.</h3>
-        <h3><%= link_to "Sign Up",new_user_registration_path %></h3>
-        <h3><%= link_to "Sign In", new_user_session_path%></h3>
-     <% else %>
-      <h2>Welcome, <br><%= current_user.name %> !</h2>
-    <% end %>
-  <%= yield %>
-</div>
-
-  </body>
+  <% if !current_user %>
+    <h2> Welcome to Shopping List!</h2>
+      <h3>Shopping List is the smarter way to keep your shopping organized.</h3>
+      <h3><%= link_to "Sign Up",new_user_registration_path, :class => "sign-up-btn" %></h3>
+      <h3><%= link_to "Sign In", new_user_session_path, :class => "sign-in-btn"%></h3>
+  <% else %>
+    <h2>Welcome, <br><%= current_user.name %> !</h2>
+  <% end %>
+    <p class="notice"><%= notice %></p>
+      <%= yield %>
+   </body>
 </html>

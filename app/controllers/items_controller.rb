@@ -9,7 +9,13 @@ class ItemsController < ApplicationController
   def create
     @list = List.find(params[:list_id])
     @item = @list.items.create(item_params)
+    if @item.save
+      flash[:notice] = "Item created"
       redirect_to list_path(@list)
+    else
+      flash[:notice] = "Name required"
+      render :new
+    end
   end
 
   def show
@@ -20,9 +26,7 @@ class ItemsController < ApplicationController
     @list = List.find(params[:list_id])
     @item = Item.find(params[:id])
       if @list.user != current_user
-        flash[:alert] = "Only the author can edit it!"
-
-        redirect_to list_path(@list)
+          redirect_to list_path(@list)
       end
   end
 
@@ -30,9 +34,7 @@ class ItemsController < ApplicationController
     @list = List.find(params[:list_id])
     @item = Item.find(params[:id])
       if @list.user == current_user
-        @item.update(item_params)
-      else
-        flash[:alert] = "Only the author can edit it!"
+          @item.update(item_params)
       end
       redirect_to list_path(@list)
   end
@@ -41,9 +43,7 @@ class ItemsController < ApplicationController
     @list = List.find(params[:list_id])
     @item = Item.find(params[:id])
       if @list.user == current_user
-        @item.destroy
-      else
-        flash[:alert] = "Only the author can edit it!"
+          @item.destroy
       end
         redirect_to list_path(@list)
   end

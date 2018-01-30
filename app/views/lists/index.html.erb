@@ -1,17 +1,17 @@
 <% if current_user %>
   <div class= "container">
     <section>
-      <div class="create_button">
-        <%= link_to "Create New List ", new_list_path , :class => "new_list"%>
-        <i class="fa fa-plus" aria-hidden="true"></i>
-      </div>
+      <h2 class= "lists-title"> Lists </h2>
         <% current_user.lists.each do |list| %>
-          <ul>
-            <li>
-              <%= link_to list.title, list_path(list) %> <time>Updated <%= list.updated_at %></time>
-            </li>
-          </ul>
-          <% end %>
-<% end %>
+         <i class="fa fa-list" aria-hidden="true">
+           <%= link_to list.title, list_path(list), :class => 'title-name' %>
+         </i>
+          <time> Last updated:<%= list.updated_at %></time>
+        <% end %>
+      <hr>
+        <div class="create_button">
+          <%= link_to "Create a new list + ", new_list_path , :class => "new_list"%>
+        </div>
     </section>
   </div>
+<% end %>
