@@ -32,7 +32,7 @@
 .dropbtn {
 	background-color: inherit;
 	color: #343834;
-	padding: 16px;
+	padding: 30px;
 	font-size: 30px;
 	border: none;
 	cursor: pointer;
@@ -127,6 +127,7 @@
 .fa-home {
 	display: flex;
 	justify-content: center;
+	padding: 30px;
 }
 
 .fa-cart-plus {
