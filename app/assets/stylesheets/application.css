@@ -8,7 +8,7 @@
 
 .container {
 	background-color: #ffffff;
-	width: 100%;
+	width: 60%;
 	height: inherit;
 	margin: auto;
 	border-radius: 20px;
@@ -24,6 +24,18 @@
 	color: red;
 	font-family: 'Roboto', sans-serif;
 	font-size: 12px;
+}
+em,
+#error-msgs {
+	color: red;
+	font-family: 'Roboto', sans-serif;
+	font-size: 12px;
+}
+#error_explanation h2 {
+	color: #424242;
+	font-family: 'Roboto',sans-serif;
+	font-size: 12px;
+	font-weight: 400;
 }
 
 /* buttons */
@@ -66,7 +78,7 @@
 	background-color: inherit;
 }
 
-.create_button a {
+.create_button {
 	font-size: 30px;
 	font-weight: bold;
 	padding: 5px 15px;
@@ -100,14 +112,16 @@
 	font-weight: bolder;
 	border: none;
 }
+
 .button-submit {
-	width: 382px;
+	width: 100%;
 	font-style: bold;
 	font-size: 20px;
 	background-color: #090f42;
 	color: white;
 	font-weight: bolder;
 }
+
 
 .list_edit,
 .list_delete {
@@ -122,12 +136,6 @@
 	padding-left: 20px;
 	margin-top: 10px;
 	margin-bottom: 10px;
-}
-
-.fa-home {
-	display: flex;
-	justify-content: center;
-	padding: 30px;
 }
 
 .fa-cart-plus {
@@ -267,7 +275,130 @@ textarea {
 	display: flex;
 	justify-content: center;
 	font-size: 25px;
+	width: 72%;
 }
+
+
 .text-box {
 	padding: 40px 45px;
+}
+
+
+/* formating app to different devices */
+@media only screen and (max-width: 768px) {
+	h2,
+	h3 {
+		text-align: center;
+	}
+	.container {
+		width: 70%;
+	}
+	input {
+		width: 70%;
+	}
+	textarea {
+		width: 73%;
+	}
+	.button-submit,
+	.button-update {
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 414px) {
+	h2,
+	h3 {
+		text-align: center;
+	}
+	.container {
+		width: 100%;
+	}
+	input {
+		width: 70%;
+	}
+	textarea {
+		width: 73%;
+	}
+	.button-submit,
+	.button-update {
+		width: 100%;
+	}
+	 section {
+	 	width: 330px;
+	 }
+
+	 .fa-cart-plus {
+	 	padding-left: 170px;
+	 }
+	 .list_edit {
+		 padding-left: 0;
+	 }
+	 .list_delete {
+		 padding-left: 200px;
+	 }
+}
+
+@media only screen and (max-width: 375px) {
+	h2,
+	h3 {
+		text-align: center;
+	}
+	.container {
+		width: 100%;
+	}
+	input {
+		width: 70%;
+	}
+	textarea {
+		width: 72%;
+	}
+	.button-submit
+	.button-update {
+		width: 99%;
+	}
+    section {
+		width: 300px;
+	}
+	.fa-cart-plus {
+		padding-left: 140px;
+	}
+	 .list_edit {
+	 	padding-left: 0;
+	 }
+
+	 .list_delete {
+	 	padding-left: 150px;
+	 }
+}
+
+@media only screen and (max-width: 320px) {
+	h2, h3 {
+text-align: center;
+	}
+	.container {
+		width: 100%;
+	}
+	input {
+		width: 65%;
+	}
+	textarea {
+		width: 67%;
+	}
+	.button-submit,
+	.button-update {
+		width: 99%;
+	}
+	 section {
+	 	width: 250px;
+	 }
+	 .fa-cart-plus {
+	 	padding-left: 100px;
+	 }
+    .list_edit {
+    	padding-left: 0;
+    }
+
+    .list_delete {
+    	padding-left: 100px;
+    }
 }

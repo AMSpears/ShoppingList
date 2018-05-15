@@ -1,6 +1,6 @@
 <div class="container">
 <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+  <div id= "error-msgs"> <%= devise_error_messages! %></div>
   <h2>Resend confirmation instructions</h2>
 
   <div class="field">
@@ -9,7 +9,7 @@
   </div>
 
   <div class="action">
-    <%= f.submit "Resend confirmation instructions" %>
+    <%= f.submit "Resend confirmation instructions" :class => "button-submit" %>
   </div>
 <% end %>
 </div>
