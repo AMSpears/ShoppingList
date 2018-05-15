@@ -12,21 +12,22 @@
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <script src="https://use.fontawesome.com/ffb5855a62.js"></script>
   </head>
 
   <body>
     <% if current_user %>
-      <div class="navs">
-        <%= link_to lists_path do %><i class="fa fa-home" aria-hidden="true"></i><% end %>
+      <%# <div class="navs"> %>
           <div class = 'dropdown'>
-            <button class = 'dropbtn'> <i class="fa fa-cog" aria-hidden="true"> </i></button>
+            <button class = 'dropbtn'><i class="fas fa-bars"></i></i></button>
            <div class = 'dropdown-content'>
+            <a><%= link_to lists_path do %> Home <% end %></a>
             <a><%= link_to edit_user_registration_path do %> Settings <% end %> </a>
            <a><%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => "sign-out-btn" %></a>
           </div>
         </div>
-      </div>
+      <%# </div> %>
   <% end %>
 
   <header>

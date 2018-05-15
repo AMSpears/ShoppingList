@@ -147,11 +147,6 @@ em,
 	color: #610940;
 }
 
-.fa-cog {
-	color: #343834;
-	padding-left: 100%;
-}
-
 .sign-out-btn,
 .sign-in-btn,
 .sign-up-btn {
@@ -164,10 +159,10 @@ em,
 	font-size: 30px;
 }
 
-.navs {
+/* .navs {
 	display: flex;
 	justify-content: space-between;
-}
+    flex-direction: row; } */
 
 a {
 	color: #610940;
